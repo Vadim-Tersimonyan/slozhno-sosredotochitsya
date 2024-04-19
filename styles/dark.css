@@ -7,6 +7,7 @@
   --title-decor: #ff0070;
   --main-text-color: #ff0070;
   --hover-color: color-mix(in srgb, #FF0070 40%, transparent);
+  --big-resolution-shadow: #ff0070;
 }
 
 .theme_dark .decorative-icon {
