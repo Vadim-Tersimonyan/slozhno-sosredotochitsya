@@ -14,7 +14,7 @@
 .decorative-icon {
   position: absolute;
   inset-block-start: 10px;
-  right: 39px;
+  inset-inline-end: 39px;
   color: var(--accent-color);
   font-family: var(--main-font), monospace;
   font-size: 18px;
@@ -44,8 +44,7 @@
 }
 
 .header__theme-menu-button {
-  padding-inline-start: 12px;
-  padding-inline-end: 12px;
+  padding: 0 12px;
 }
 
 .header__theme-menu-button_active {
@@ -64,7 +63,7 @@
 .header__theme-menu-button:focus-visible {
   outline: none;
   border-bottom: 1px solid var(--main-text-color);
-  margin-bottom: -1px;
+  margin-block-end: -1px;
 }
 
 .decorated-zone {
@@ -225,11 +224,7 @@
 .pictures {
   display: grid;
   margin-block-start: 10px;
-  gap: 5px;
-}
-.o-margin {
-  padding: 0;
-  margin: 0;
+  gap: 10px;
 }
 
 .picture {
@@ -252,7 +247,6 @@
 .footer-shadow {
   align-self: center;
   text-shadow: 2px 2px 0 var(--accent-color);
-  padding-inline-start: 20px;
 }
 
 @media (width >= 768px) {
@@ -273,7 +267,7 @@
 
   .main-text {
     margin-inline-start: -20px;
-    font-size: (7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header-block {
@@ -319,29 +313,41 @@
     
   .sunset {
     grid-column: span 2;
+    grid-row: span 1;
   }
 
   .ice-cream {
     grid-row: span 2;
+    grid-column: span 1;
   }
 
   .tape {
     grid-row: span 2;
+    grid-column: span 1;
   }
 
   .street {
     grid-column: span 2;
+    grid-row: span 1;
   }
 
   .footer {
    margin-block-start: 60px;
    padding: 20px;
   }
+  
+  .footer-shadow {
+    text-shadow: 2px 2px 0 var(--big-resolution-shadow);
+    padding-inline-start: 20px;
+  }
 }
 
 @media (width >= 1024px) {
   .main-text {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .main-shadow {
     text-shadow: 4px 4px 0 var(--big-resolution-shadow);
   }
 
@@ -373,11 +379,8 @@
     gap: 20px;
   }
 
-  .footer-title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
   .footer-shadow {
     text-shadow: 2px 2px 0 var(--big-resolution-shadow);
+    padding-inline-start: 20px;
   }
 }
