@@ -43,10 +43,6 @@
   margin-block-end: 40px;
 }
 
-.header__theme-menu-button {
-  padding: 0 12px;
-}
-
 .header__theme-menu-button_active {
   outline: 1px solid var(--main-text-color);
   pointer-events: none;
@@ -145,6 +141,7 @@
   font-family: var(--main-font), monospace;
   text-transform: lowercase;
   color: var(--main-text-color);
+  padding: 0 12px;
 }
 
 .section {
