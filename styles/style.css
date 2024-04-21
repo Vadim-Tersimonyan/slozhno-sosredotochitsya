@@ -43,6 +43,19 @@
   margin-block-end: 40px;
 }
 
+.header__theme-menu-button {
+  appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: var(--main-font), monospace;
+  text-transform: lowercase;
+  color: var(--main-text-color);
+  padding: 0 12px;
+}
+
 .header__theme-menu-button_active {
   outline: 1px solid var(--main-text-color);
   pointer-events: none;
@@ -76,8 +89,8 @@
   content: "";
   position: absolute;
   width: 25px;
-  right: 10px;
-  top: 10px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
   height: 25px;
   border-top: 1px solid var(--main-text-color);
   border-right: 1px solid var(--main-text-color);
@@ -87,8 +100,8 @@
   content: "";
   position: absolute;
   width: 25px;
-  left: 10px;
-  bottom: 10px;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
   height: 25px;
   border-bottom: 1px solid var(--main-text-color);
   border-left: 1px solid var(--main-text-color);
@@ -129,19 +142,6 @@
   display: flex;
   text-align: center;
   justify-content: center;
-}
-
-.header__theme-menu-button {
-  appearance: none;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  font-size: 18px;
-  line-height: 18px;
-  font-family: var(--main-font), monospace;
-  text-transform: lowercase;
-  color: var(--main-text-color);
-  padding: 0 12px;
 }
 
 .section {
@@ -248,18 +248,18 @@
 
 @media (width >= 768px) {
   .decorative-icon {
-    top: 20px;
-    right: 48px;
+    inset-block-start: 20px;
+    inset-inline-end: 48px;
   }
 
   .decorated-zone::before {
-    right: 20px;
-    top: 20px;
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
   }
 
   .decorated-zone::after {
-    left: 20px;
-    bottom: 20px;
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
   }
 
   .main-text {
@@ -334,20 +334,11 @@
   }
   
   .footer-shadow {
-    text-shadow: 2px 2px 0 var(--big-resolution-shadow);
     padding-inline-start: 20px;
   }
 }
 
 @media (width >= 1024px) {
-  .main-text {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .main-shadow {
-    text-shadow: 4px 4px 0 var(--big-resolution-shadow);
-  }
-
   .header__theme-menu {
     align-self: flex-start;
     justify-self: center;
@@ -374,10 +365,5 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-
-  .footer-shadow {
-    text-shadow: 2px 2px 0 var(--big-resolution-shadow);
-    padding-inline-start: 20px;
   }
 }
